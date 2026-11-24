@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Table - Asha's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <a href="index.html" class="brand"><b>Asha's <span>Kitchen</span></b></a>
+        <nav class="top-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html" class="active">Reservation</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" onclick="openCart()" class="cart-pill">🛒 Cart (<span
+                    id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <section id="reservation" class="section grey">
+        <h2 class="center">Book A <span>Table</span></h2>
+        <p class="center sub">Reserve in 30 seconds - We will call you to confirm</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>📍 Visit Us</h3>
+                <p><b>Address:</b> Main Road, Ambur, Tamil Nadu</p>
+                <p><b>Phone:</b> +91 98765 43210</p>
+                <p><b>Time:</b> 11 AM - 11 PM (All Days)</p>
+                <div class="map-box">🗺️ Ambur • Vellore • Vaniyambadi<br><small>Free Parking Available</small></div>
+            </div>
+            <form class="book-form" onsubmit="bookTable(event)">
+                <h3>🍽️ Reserve Your Table</h3>
+                <input type="text" id="custName" placeholder="Your Name" required>
+                <input type="tel" id="custPhone" placeholder="Phone Number" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" step="60" required>
+                    </div>
+                </div>
+                <select id="guests">
+                    <option>2 Guests</option>
+                    <option>4 Guests</option>
+                    <option>6 Guests</option>
+                    <option>8+ Guests - Party</option>
+                </select>
+                <select id="cuisinePref">
+                    <option>Any Cuisine</option>
+                    <option>Korean</option>
+                    <option>Chinese</option>
+                    <option>Indian</option>
+                </select>
+                <button type="submit" class="btn-primary full">Confirm Booking →</button>
+                <p id="bookMsg" class="book-msg"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Asha's Kitchen | Made With ❤️ In Ambur</p>
+    </footer>
+    <div id="cartModal" class="modal">
+        <div class="modal-box"><span class="close" onclick="closeCart()">✕</span>
+            <h2>🛒 Your Order</h2>
+            <div id="cartItems"></div>
+            <div class="total">Total: <b id="cartTotal">₹0</b></div><button class="btn-primary full"
+                onclick="checkout()">Checkout & Pay →</button>
+            <p id="checkoutMsg"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

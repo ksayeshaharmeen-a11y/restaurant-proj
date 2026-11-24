@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Asha's Kitchen</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <a href="index.html" class="brand"><b>Asha's <span>Kitchen</span></b></a>
+  <nav class="top-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="review.html">Reviews</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="javascript:void(0)" onclick="openCart()" class="cart-pill">🛒 Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+</header>
+
+<section id="contact" class="section grey">
+  <h2 class="center">Contact <span>Us</span></h2>
+  <p class="center sub">We reply within 10 minutes - 11 AM to 11 PM</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>📍 Visit Us</h3>
+      <p><b>Address:</b> Main Road, Ambur, Tamil Nadu - 635802</p>
+      <p><b>Phone:</b> +91 98765 43210</p>
+      <p><b>WhatsApp:</b> +91 98765 43210</p>
+      <p><b>Email:</b> hello@ashaskitchen.com</p>
+      <p><b>Time:</b> 11 AM - 11 PM (All Days)</p>
+      <div class="map-box">🗺️ Ambur • Vellore • Vaniyambadi<br><small>Free Parking Available</small></div>
+    </div>
+    <form class="book-form" onsubmit="sendContact(event)">
+      <h3>💬 Send Us A Message</h3>
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+      <input type="text" id="contactSubject" placeholder="Subject - e.g. Catering, Feedback" required>
+      <textarea id="contactMessage" placeholder="Your Message..." rows="4" required style="width:100%; padding:12px; border-radius:10px; border:1px solid #ddd; font-family:inherit;"></textarea>
+      <button type="submit" class="btn-primary full">Send Message →</button>
+      <p id="contactMsg" class="book-msg"></p>
+    </form>
+  </div>
+</section>
+
+<footer><p>© 2026 Asha's Kitchen | Made With ❤️ In Ambur</p></footer>
+<div id="cartModal" class="modal"><div class="modal-box"><span class="close" onclick="closeCart()">✕</span><h2>🛒 Your Order</h2><div id="cartItems"></div><div class="total">Total: <b id="cartTotal">₹0</b></div><button class="btn-primary full" onclick="checkout()">Checkout & Pay →</button><p id="checkoutMsg"></p></div></div>
+<script src="script.js"></script>
+<script>
+function sendContact(e){
+  e.preventDefault();
+  let name = document.getElementById("contactName").value;
+  document.getElementById("contactMsg").innerText = "✅ Thank You " + name + "! Your message is sent. We will call you in 10 minutes.";
+  e.target.reset();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - Asha's Kitchen</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <a href="index.html" class="brand"><b>Asha's <span>Kitchen</span></b></a>
+  <nav class="top-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="review.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="javascript:void(0)" onclick="openCart()" class="cart-pill">🛒 Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+</header>
+
+<section id="services" class="section grey">
+  <h2 class="center">Our <span>Services</span></h2>
+  <p class="center sub">We serve you how you like</p>
+  <div class="service-grid">
+    <div class="service-card"><div class="s-icon">🚚</div><h3>Fast Delivery</h3><p>Hot food in 25 minutes in Ambur. Free above ₹499.</p><button onclick="showService('Delivery')">Book Delivery</button></div>
+    <div class="service-card"><div class="s-icon">🍽️</div><h3>Dine-In</h3><p>Beautiful family seating, private rooms for 20 people.</p><button onclick="showService('Dine-In')">Reserve Table</button></div>
+    <div class="service-card"><div class="s-icon">🎉</div><h3>Party & Catering</h3><p>Birthday, wedding, office party - we cater for 500+ people.</p><button onclick="showService('Catering')">Get Quote</button></div>
+    <div class="service-card"><div class="s-icon">🥡</div><h3>Takeaway</h3><p>Order online, pick up in 15 minutes. No waiting.</p><button onclick="showService('Takeaway')">Order Now</button></div>
+  </div>
+</section>
+
+<footer><p>© 2026 Asha's Kitchen | Made With ❤️ In Ambur</p></footer>
+<div id="cartModal" class="modal"><div class="modal-box"><span class="close" onclick="closeCart()">✕</span><h2>🛒 Your Order</h2><div id="cartItems"></div><div class="total">Total: <b id="cartTotal">₹0</b></div><button class="btn-primary full" onclick="checkout()">Checkout & Pay →</button><p id="checkoutMsg"></p></div></div>
+<script src="script.js"></script>
+</body>
+</html>

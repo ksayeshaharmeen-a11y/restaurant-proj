@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Asha's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <a href="index.html" class="brand"><b>Asha's <span>Kitchen</span></b></a>
+        <nav class="top-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="review.html">Reviews</a>
+            <a href="feedback.html" class="active">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" onclick="openCart()" class="cart-pill">🛒 Cart (<span
+                    id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <section class="section grey">
+        <h2 class="center">Your <span>Feedback Matters</span></h2>
+        <p class="center sub">Tell us how we did - It helps us cook better for you!</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>❤️ Why Feedback?</h3>
+                <p>• We read every single feedback</p>
+                <p>• Best feedback gets 10% OFF next order</p>
+                <p>• Your review helps other food lovers in Ambur</p>
+                <div class="map-box">⭐⭐⭐⭐⭐<br><small>4.9 Rating from 2,400+ Customers</small></div>
+            </div>
+            <form class="book-form" onsubmit="submitFeedback(event)">
+                <h3>📝 Share Your Experience</h3>
+                <input type="text" id="fbName" placeholder="Your Name" required>
+                <select id="fbRating">
+                    <option value="5">⭐⭐⭐⭐⭐ - Excellent (5)</option>
+                    <option value="4">⭐⭐⭐⭐ - Very Good (4)</option>
+                    <option value="3">⭐⭐⭐ - Good (3)</option>
+                    <option value="2">⭐⭐ - Average (2)</option>
+                    <option value="1">⭐ - Poor (1)</option>
+                </select>
+                <select id="fbDish">
+                    <option>Which dish did you try?</option>
+                    <option>Korean - Bibimbap / BBQ</option>
+                    <option>Chinese - Dim Sum / Noodles</option>
+                    <option>Indian - Biryani / Butter Chicken</option>
+                    <option>Dessert - Bingsu / Gulab Jamun</option>
+                </select>
+                <textarea id="fbText" placeholder="How was the food? Service? Taste?" rows="4" required
+                    style="width:100%; padding:12px; border-radius:10px; border:1px solid #ddd; font-family:inherit;"></textarea>
+                <button type="submit" class="btn-primary full">Submit Feedback →</button>
+                <p id="fbMsg" class="book-msg"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Asha's Kitchen | Made With ❤️ In Ambur</p>
+    </footer>
+    <div id="cartModal" class="modal">
+        <div class="modal-box"><span class="close" onclick="closeCart()">✕</span>
+            <h2>🛒 Your Order</h2>
+            <div id="cartItems"></div>
+            <div class="total">Total: <b id="cartTotal">₹0</b></div><button class="btn-primary full"
+                onclick="checkout()">Checkout & Pay →</button>
+            <p id="checkoutMsg"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function submitFeedback(e) {
+            e.preventDefault();
+            let name = document.getElementById("fbName").value;
+            let rating = document.getElementById("fbRating").value;
+            document.getElementById("fbMsg").innerText = "🎉 Thank You " + name + "! Your " + rating + " star feedback is saved. You got 10% OFF on next order!";
+            e.target.reset();
+        }
+    </script>
+</body>
+
+</html>

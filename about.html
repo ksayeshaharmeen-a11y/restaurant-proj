@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Asha's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <a href="index.html" class="brand"><b>Asha's <span>Kitchen</span></b></a>
+
+        <nav class="top-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" onclick="openCart()" class="cart-pill">🛒 Cart (<span
+                    id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Asha's Kitchen">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Our Story</span></h2>
+            <p class="about-main">Some kitchens cook food. Ours cooks memories.</p>
+            <p>Asha's Kitchen was born in a small home kitchen in Ambur - from a mother's love, a family recipe book,
+                and a dream to serve the world on one table. Today, we bring Seoul's fire, Shanghai's soul, and Ambur's
+                heart together in every single plate.</p>
+            <p>No frozen food. No shortcuts. Only fresh spices, slow cooking, and recipes passed down with love - just
+                like home, but with a taste of the world.</p>
+            <ul class="about-points">
+                <li>🔥 <b>Korean Soul -</b> Real Gochujang, Kimchi and BBQ, made with patience</li>
+                <li>🥟 <b>Chinese Craft -</b> Hand-folded Dumplings and Wok-tossed Noodles, fresh every day</li>
+                <li>🍛 <b>Indian Heart -</b> Ambur Special Biryani, Tandoor and Slow-Cooked Curries</li>
+            </ul>
+            <a href="menu.html" class="btn-chefs">Explore Our Menu →</a>
+            <p class="about-chefs-line">👨‍🍳 Chef Kim (Korea) • Chef Lee (China) • Chef Sharma (India) - 20+ Years
+                Experience!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Asha's Kitchen | Made With ❤️ In Ambur | <a href="index.html">Back To Home ↑</a></p>
+    </footer>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-box"><span class="close" onclick="closeCart()">✕</span>
+            <h2>🛒 Your Order</h2>
+            <div id="cartItems"></div>
+            <div class="total">Total: <b id="cartTotal">₹0</b></div><button class="btn-primary full"
+                onclick="checkout()">Checkout & Pay →</button>
+            <p id="checkoutMsg"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
